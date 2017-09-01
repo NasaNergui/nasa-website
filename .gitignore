@@ -42,3 +42,4 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+1_dev_vars.rb
