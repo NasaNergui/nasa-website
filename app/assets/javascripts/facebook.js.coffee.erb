@@ -8,10 +8,26 @@ jQuery ->
 
 window.fbAsyncInit = ->
   FB.getLoginStatus (response) ->
-    alert response.status
     if response.status == 'connected'
-      window.location = '/auth/facebook/callback'
+      #window.location = '/auth/facebook/callback'
     else if response.status == 'not_authorized'
-      window.location = '/signout'
+      #window.location = '/signout'
     
-    
+    # On login:
+    #   login to facebook
+    #   create session using facebook login
+    #   page reload
+      
+    # On logout:
+    #   stay logged into facebook
+    #   destroy current session
+    #   page reload
+      
+    # On initial load:
+    #   if logged in through facebook, create session
+    #   if not logged in, destroy session
+        
+    # Session should always match facebook status
+    # with the exception of being able to destroy local session
+    # (though now I see that if we destroy the session but are still logged into facebook
+    # we would simply create a new session on page reload...)
